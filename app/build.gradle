@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.note.countriesudemy"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // For Kotlin projects
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def lifeCycleExtensionsVersion = '1.1.1'
+def supportVersion = '28.0.0'
+def daggerVersion = '2.13'
+def mockitoVersion = '2.11.0'
+def rxJavaVersion = '2.0.1'
+def lifecycle_version = '2.2.0'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation "com.squareup.retrofit2:converter-gson:2.7.1"
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.1'
+
+    //rx-java
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+    implementation "com.github.bumptech.glide:glide:4.10.0"
+
+    // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // optional - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+
+
+
+    // Optional -- Mockito framework
+    testImplementation 'org.mockito:mockito-core:2.19.0'
+    // Optional -- Robolectric environment
+    testImplementation 'androidx.test:core:1.0.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+}

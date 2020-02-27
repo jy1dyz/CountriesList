@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CountriesUdemy</string>
+	<string name="an_error_ocurred_while_loading_data">an error ocurred while loading Data</string>
+</resources>
