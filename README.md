@@ -1,2 +1,2 @@
 # CountriesList
-Using Retrofit2, Dagger2, RxJava in Kotlin
+Using Retrofit2, Dagger2, RxJava, MVVM in Kotlin
